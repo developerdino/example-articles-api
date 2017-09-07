@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Article;
-use App\Http\Resources\CommentsRelationshipResource;
+use App\Http\Resources\CommentsResource;
 use App\Http\Resources\PeopleResource;
 
 class ArticleRelationshipController extends Controller
@@ -16,6 +16,6 @@ class ArticleRelationshipController extends Controller
 
     public function comments(Article $article)
     {
-        return new CommentsRelationshipResource($article->comments);
+        return new CommentsResource($article->comments);
     }
 }

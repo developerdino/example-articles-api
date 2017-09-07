@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Http\Resources\CommentResource;
-use App\Http\Resources\CommentsResourceCollection;
+use App\Http\Resources\CommentsResource;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -15,7 +15,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        return new CommentsResourceCollection(Comment::with(['author'])->paginate());
+        return new CommentsResource(Comment::with(['author'])->paginate());
     }
 
     /**

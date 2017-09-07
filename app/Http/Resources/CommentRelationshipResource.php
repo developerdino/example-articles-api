@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class CommentsRelationshipResource extends Resource
+class CommentRelationshipResource extends Resource
 {
     /**
      * Transform the resource collection into an array.
@@ -17,7 +17,7 @@ class CommentsRelationshipResource extends Resource
     {
         return [
             'author'   => [
-                'data'  => new AuthorResourceIdentifier($this->author),
+                'data'  => new AuthorIdentifierResource($this->author),
             ],
         ];
     }

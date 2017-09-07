@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Http\Resources\ArticleResource;
-use App\Http\Resources\ArticlesResourceCollection;
+use App\Http\Resources\ArticlesResource;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -12,11 +12,11 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return ArticlesResourceCollection
+     * @return ArticlesResource
      */
     public function index()
     {
-        return new ArticlesResourceCollection(Article::with(['author', 'comments.author'])->paginate());
+        return new ArticlesResource(Article::with(['author', 'comments.author'])->paginate());
     }
 
     /**

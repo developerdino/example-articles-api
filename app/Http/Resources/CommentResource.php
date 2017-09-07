@@ -21,7 +21,7 @@ class CommentResource extends Resource
             'attributes' => [
                 'body' => $this->body,
             ],
-            'relationships' => new CommentsRelationshipResource($this),
+            'relationships' => new CommentRelationshipResource($this),
             'links'      => [
                 'self' => route('comments.show', ['comment' => $this->id]),
             ],

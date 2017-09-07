@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class CommentResourceIdentifier extends Resource
+class AuthorIdentifierResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +16,8 @@ class CommentResourceIdentifier extends Resource
     public function toArray($request)
     {
         return [
-            'type'          => 'comments',
-            'id'            => (string)$this->id,
+            'type'       => 'people',
+            'id'         => (string)$this->id,
         ];
     }
 }

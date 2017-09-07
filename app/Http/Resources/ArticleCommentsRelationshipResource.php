@@ -18,7 +18,7 @@ class ArticleCommentsRelationshipResource extends ResourceCollection
         $article = $this->additional['article'];
 
         return [
-            'data'  => CommentResourceidentifier::collection($this->collection),
+            'data'  => CommentIdentifierResource::collection($this->collection),
             'links' => [
                 'self'    => route('articles.relationships.comments', ['article' => $article->id]),
                 'related' => route('articles.comments', ['article' => $article->id]),

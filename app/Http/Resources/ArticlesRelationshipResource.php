@@ -21,7 +21,7 @@ class ArticlesRelationshipResource extends Resource
                     'self'    => route('articles.relationships.author', ['article' => $this->id]),
                     'related' => route('articles.author', ['article' => $this->id]),
                 ],
-                'data'  => new AuthorResourceIdentifier($this->author),
+                'data'  => new AuthorIdentifierResource($this->author),
             ],
             'comments' => (new ArticleCommentsRelationshipResource($this->comments))->additional(['article' => $this]),
         ];
