@@ -21,7 +21,7 @@ class ArticleResource extends Resource
             'attributes'    => [
                 'title' => $this->title,
             ],
-            'relationships' => new ArticlesRelationshipResource($this),
+            'relationships' => new ArticleRelationshipResource($this),
             'links'         => [
                 'self' => route('articles.show', ['article' => $this->id]),
             ],

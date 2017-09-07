@@ -47,7 +47,7 @@ class AuthorController extends Controller
     public function show(People $author)
     {
         PeopleResource::withoutWrapping();
-        
+
         return new PeopleResource($author);
     }
 
