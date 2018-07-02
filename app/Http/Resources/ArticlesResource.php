@@ -35,7 +35,8 @@ class ArticlesResource extends ResourceCollection
                 return $article->author;
             }
         );
-        $included = $authors->merge($comments)->unique();
+
+        $included = (new \Illuminate\Database\Eloquent\Collection($authors->merge($comments)))->unique();
 
         return [
             'links'    => [
