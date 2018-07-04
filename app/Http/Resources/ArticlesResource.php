@@ -35,7 +35,8 @@ class ArticlesResource extends ResourceCollection
                 return $article->author;
             }
         );
-        $included = $authors->merge($comments)->unique();
+
+        $included = $authors->merge($comments)->unique('id');
 
         return [
             'links'    => [
