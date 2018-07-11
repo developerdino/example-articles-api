@@ -18,6 +18,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     }
 );
 
+/*
+|--------------------------------------------------------------------------
+| Notes
+|--------------------------------------------------------------------------
+|
+| You can check the various output cases of this API (with or without comments)
+| by going to different indexes of the routes. The random data is generated
+| through factories in database/seeds/DatabaseSeeder.php
+|
+| Run: php artisan db:seed
+|
+*/
+
 Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 Route::resource('authors', \App\Http\Controllers\AuthorController::class);
 Route::resource('comments', \App\Http\Controllers\CommentController::class);
