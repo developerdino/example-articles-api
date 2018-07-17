@@ -25,7 +25,15 @@ class ArticleControllerTest extends TestCase
                 'attributes' => [
                     'title' => $article->title
                 ],
-                'id' => $article->id
+                'id' => (string)$article->id,
+                'relationships' => [
+                    'author' => [
+                        'data' => [
+                            'id' => (string)$person->id,
+                            'type' => 'people'
+                        ]
+                    ]
+                ]
             ]);
     }
 }
