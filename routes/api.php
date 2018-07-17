@@ -13,11 +13,23 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get(
-    '/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-}
+    }
 );
+
+/*
+|--------------------------------------------------------------------------
+| Notes
+|--------------------------------------------------------------------------
+|
+| You can check the various output cases of this API (with or without comments)
+| by going to different indexes of the routes. The random data is generated
+| through factories in database/seeds/DatabaseSeeder.php
+|
+| Run: php artisan db:seed
+|
+*/
 
 Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 Route::resource('authors', \App\Http\Controllers\AuthorController::class);
