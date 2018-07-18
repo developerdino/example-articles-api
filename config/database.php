@@ -64,7 +64,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
-            'sslmode' => 'prefer',
+            'sslmode' => env('DB_SSL', 'prefer'),
         ],
 
         'sqlsrv' => [
